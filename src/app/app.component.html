@@ -1,0 +1,34 @@
+<div class="header">
+  <h6><b style="font-size: 2em;">PC_MAIN_STATS</b></h6>
+</div>
+<div>
+  <span> </span>
+</div>
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchRecordText" (keyup.enter)="search()" placeholder="Search by Record ID" />
+  <input type="text" [(ngModel)]="searchFileNameText" (keyup.enter)="search()" placeholder="Search by File Name" />
+  <input type="date" [(ngModel)]="startDate" (keyup.enter)="search()" placeholder="Search by Start Date" pattern="\d{4}-\d{2}-\d{2}"/>
+  <input type="date" [(ngModel)]="endDate" (keyup.enter)="search()" placeholder="Search by End Date" pattern="\d{4}-\d{2}-\d{2}"/>
+  <button (click)="search()">Search</button>
+</div>
+
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="dataSource | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }"
+  [showBorders]="true"
+  [columns]="gridColumns"
+  [editing]="{ mode: 'cell', allowUpdating: false }"
+  [allowColumnResizing]="true"
+  columnResizingMode="widget"
+  class="grid-cell-underlined"
+>
+  <!-- Custom Cell Template -->
+  <div *dxTemplate="let cellData of 'customCellTemplate'">
+    <a [href]="getURLForPCMainDocID(cellData.value)" target="_blank" [style.textDecoration]="'underline'">{{ cellData.value }}</a>
+  </div>
+</dx-data-grid>
+
+<!-- Pagination Controls -->
+<div class="pagination-controls">
+  <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
