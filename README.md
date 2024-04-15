@@ -1,3 +1,15 @@
+# Dashboard Intermediate code
+## This is an intermediate code where there were somechanges made to the initial prototype and significant chnages have been made to this interface to make it even smoother in terms of functionality and styling.
+
+## 1) VIEW OF THE PROTOTYPE
+
+ ![image](https://github.com/RudrarajuAsrithVarma/Dashboard1/assets/98108770/54cf57ad-d1ff-4af8-bc84-1ac97b02f5b2)
+
+ ![image](https://github.com/RudrarajuAsrithVarma/Dashboard1/assets/98108770/628cde5e-2957-4ef1-bd97-aa18c0878129)
+
+
+
+
 # Devextest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
